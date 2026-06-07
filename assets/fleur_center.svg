@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <title>Fleur Scout (green with gold center)</title>
+  <defs>
+    <style>
+      .g{fill:#1f5a3a}
+      .gold{fill:#caa94b}
+    </style>
+  </defs>
+  <!-- Outer fleur shapes (green) -->
+  <path class="g" d="M32 2c0 0-6 8-6 12 0 4 6 9 6 9s6-5 6-9c0-4-6-12-6-12z"/>
+  <path class="g" d="M12 22s6-3 12 2c6 5 8 13 8 13s2-8 8-13c6-5 12-2 12-2s-8 8-8 16c0 8 8 14 8 14s-10 0-20-6c-10 6-20 6-20 6s8-6 8-14c0-8-8-16-8-16z"/>
+  <!-- Gold center medallion -->
+  <circle class="gold" cx="32" cy="36" r="7.5" />
+  <!-- small gold accent -->
+  <ellipse class="gold" cx="32" cy="50" rx="6" ry="3.5"/>
+</svg>

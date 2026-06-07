@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Church Member Registration</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <div class="top-image-wrap">
+      <img src="assets/Screenshot 2026-06-06 133828.png" alt="Rover Team header image" class="top-page-image">
+    </div>
+    <header class="top-banner">
+      <div class="banner-wrap upside-down">
+        <div class="banner-inner upside-down">
+          <div class="banner-title">Rover Team</div>
+          <div class="banner-sub">Enrollment Form</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="tagline" role="note" aria-label="Tagline">
+      <span class="line" aria-hidden="true"></span>
+      <span class="star" aria-hidden="true">★</span>
+      <span class="tagline-text">Be Prepared .. To Serve God, Church &amp; Country</span>
+      <span class="star" aria-hidden="true">★</span>
+      <span class="line" aria-hidden="true"></span>
+    </div>
+
+    <section class="card form-card" aria-labelledby="formTitle">
+      <h2 id="formTitle" class="visually-hidden">Member Registration Form</h2>
+      <form id="memberForm" novalidate>
+
+        <div class="form-section personal card-section">
+          <div class="section-header personal-header">
+            <span class="section-number">1</span>
+            <div class="section-title">Personal Information</div>
+            <div class="person-icon" aria-hidden="true">
+              <img src="Personal Information.png" alt="personal icon" class="header-icon personal-flower">
+            </div>
+          </div>
+
+          <div class="personal-fields">
+            <div class="info-row">
+              <label for="fullName">Full Name:</label>
+              <input id="fullName" name="fullName" type="text" placeholder="Full Name">
+            </div>
+
+            <div class="info-row dob-row">
+              <label>Date of Birth:</label>
+              <div class="dob-inputs">
+                <input name="dob-day" maxlength="2" placeholder="DD" class="dob small">
+                <span class="sep">/</span>
+                <input name="dob-month" maxlength="2" placeholder="MM" class="dob small">
+                <span class="sep">/</span>
+                <input name="dob-year" maxlength="4" placeholder="YYYY" class="dob year">
+              </div>
+            </div>
+
+            <div class="info-row">
+              <label for="address">Address:</label>
+              <input id="address" name="address" type="text" placeholder="">
+            </div>
+
+            <div class="info-row">
+              <label for="phone">Phone Number:</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel">
+            </div>
+
+            <div class="info-row">
+              <label for="email">Email (Optional):</label>
+              <input id="email" name="email" type="email">
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-section scout card-section">
+          <div class="section-header personal-header">
+            <span class="section-number">2</span>
+            <div class="section-title">Scout Information</div>
+            <div class="person-icon" aria-hidden="true">
+              <img src="assets/ChatGPT%20Image%20Jun%206%2C%202026%2C%2001_27_23%20PM.png" alt="scout flower" class="header-icon scout-flower">
+            </div>
+          </div>
+
+          <div class="scout-fields">
+            <div class="checkbox-row">
+              <div class="q">Are you currently a scout member?</div>
+              <label><input type="radio" name="isScout" value="yes"> Yes</label>
+              <label><input type="radio" name="isScout" value="no"> No</label>
+            </div>
+
+            <div class="checkbox-row ranks">
+              <div class="q">Scout Rank (if any):</div>
+              <label><input type="checkbox" name="rank" value="Novice"> Novice</label>
+              <label><input type="checkbox" name="rank" value="Scout"> Scout</label>
+              <label><input type="checkbox" name="rank" value="Tenderfoot"> Tenderfoot</label>
+              <label><input type="checkbox" name="rank" value="Rover"> Rover</label>
+            </div>
+
+            <div class="info-row">
+              <label>Years of Scouting Experience:</label>
+              <input id="scoutYears" name="scoutYears" type="number" min="0" class="small-input"> years
+            </div>
+
+            <div class="info-row">
+              <label>Main Activities you have participated in:</label>
+              <textarea id="scoutActivities" name="scoutActivities" rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+
+
+    <!-- Skills & Hobbies -->
+    <section class="card form-card">
+      <div class="form-section skills">
+          <div class="section-header personal-header">
+            <span class="section-number">3</span>
+            <div class="section-title">Skills & Hobbies</div>
+            <div class="person-icon" aria-hidden="true"><img src="Skills & Hobbies.png" alt="fleur" class="header-icon"></div>
+          </div>
+
+        <div class="skills-fields">
+          <div class="skills-grid">
+            <label><input type="checkbox" name="skill" value="Leadership"> Leadership</label>
+            <label><input type="checkbox" name="skill" value="First Aid"> First Aid</label>
+            <label><input type="checkbox" name="skill" value="Camping"> Camping</label>
+            <label><input type="checkbox" name="skill" value="Cooking"> Cooking</label>
+            <label><input type="checkbox" name="skill" value="Map Reading"> Map Reading</label>
+            <label><input type="checkbox" name="skill" value="Handicrafts"> Handicrafts</label>
+            <label><input type="checkbox" name="skill" value="Photography"> Photography</label>
+            <label class="other-skill"><input type="checkbox" name="skill" value="Other"> Other: <input type="text" name="skillOther" class="inline-input" placeholder=""></label>
+          </div>
+
+          <div class="info-row">
+            <label for="hobbies">Hobbies:</label>
+            <textarea id="hobbies" name="hobbies" rows="3" placeholder=""></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Scouting Questions -->
+    <section class="card form-card">
+      <div class="form-section questions">
+          <div class="section-header personal-header">
+            <span class="section-number">4</span>
+            <div class="section-title">Scouting Questions</div>
+            <div class="person-icon" aria-hidden="true"><img src="Scouting Questions.png" alt="fleur" class="header-icon"></div>
+          </div>
+
+        <div class="questions-fields">
+          <div class="info-row">
+            <label for="q1">Why do you want to join the Rover Team?</label>
+            <textarea id="q1" name="q1" rows="2"></textarea>
+          </div>
+
+          <div class="info-row">
+            <label for="q2">What can you contribute to the team?</label>
+            <textarea id="q2" name="q2" rows="2"></textarea>
+          </div>
+
+          <div class="checkbox-row">
+            <div class="q">Can you commit to meetings, trips and activities?</div>
+            <label><input type="radio" name="commit" value="Yes"> Yes</label>
+            <label><input type="radio" name="commit" value="Sometimes"> Sometimes</label>
+            <label><input type="radio" name="commit" value="No"> No</label>
+          </div>
+
+          <div class="info-row">
+            <label for="q4">Any other information you would like to add?</label>
+            <textarea id="q4" name="q4" rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Commitment & Agreement -->
+    <section class="card form-card">
+      <div class="form-section agreement">
+        <div class="section-header personal-header">
+          <span class="section-number">5</span>
+          <div class="section-title">Commitment &amp; Agreement</div>
+            <div class="person-icon" aria-hidden="true"><img src="assets/Commitment & Agreement.png" alt="fleur" class="header-icon"></div>
+        </div>
+
+        <div class="agreement-text" style="padding:10px;color:#243a2c;font-weight:600;">
+          I hereby declare that the above information is correct, and I commit to abide by the rules, values and mission of the Rover Team.
+        </div>
+
+        <div class="agreement-fields" style="padding:12px">
+          <div class="info-row">
+            <label for="agreeName">Name:</label>
+            <input id="agreeName" name="agreeName" type="text">
+          </div>
+
+          <div class="info-row">
+            <label for="agreeSignature">Signature:</label>
+            <input id="agreeSignature" name="agreeSignature" type="text">
+          </div>
+
+          <div class="info-row dob-row">
+            <label for="agreeDate">Date:</label>
+            <div class="dob-inputs">
+              <input id="agreeDay" name="agreeDay" maxlength="2" placeholder="DD" class="dob small">
+              <span class="sep">/</span>
+              <input id="agreeMonth" name="agreeMonth" maxlength="2" placeholder="MM" class="dob small">
+              <span class="sep">/</span>
+              <input id="agreeYear" name="agreeYear" maxlength="4" placeholder="YYYY" class="dob year">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final submit and message -->
+    <div class="form-section actions-row">
+      <div class="actions">
+        <button id="submitBtn" type="submit" form="memberForm" class="btn primary">Save Member</button>
+        <div id="loading" class="loading" aria-hidden="true">Saving…</div>
+      </div>
+    </div>
+
+    <div id="message" role="status" aria-live="polite" class="message"></div>
+
+    </form>
+    </section>
+
+    <section class="bottom-design" aria-hidden="true">
+      <div class="bottom-image-wrap">
+        <img src="assets/Screenshot 2026-06-06 134330.png" alt="Rover Team bottom graphic" class="bottom-page-image">
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Hosted on GitHub Pages • Data stored in Google Sheets via Apps Script</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
