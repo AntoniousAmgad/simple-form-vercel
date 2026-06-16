@@ -28,18 +28,59 @@
   </main>
 
   <script>
+    // Replace with your deployed Google Apps Script web app URL
+    const SCRIPT_URL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+
     const form = document.getElementById('signup-form');
     const result = document.getElementById('result');
-    form.addEventListener('submit', (e) => {
+
+    function showMessage(msg, isError) {
+      result.className = '';
+      result.innerHTML = msg;
+      if (isError) result.style.color = 'crimson'; else result.style.color = '';
+    }
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       const data = new FormData(form);
-      const first = data.get('first').trim();
-      const last = data.get('last').trim();
-      const email = data.get('email').trim();
-      if (!first || !last || !email) return;
-      result.className = '';
-      result.innerHTML = `<strong>Submitted:</strong> ${first} ${last} (${email})`;
-      form.reset();
+      const first = (data.get('first') || '').trim();
+      const last = (data.get('last') || '').trim();
+      const email = (data.get('email') || '').trim();
+      if (!first || !last || !email) return showMessage('Please complete all fields', true);
+
+      showMessage('Submitting...');
+
+      const payload = { first, last, email };
+
+      // Try a standard JSON POST first. If a CORS error occurs, we'll fall back to a no-cors FormData POST.
+      try {
+        const res = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        if (res && res.ok) {
+          showMessage('<strong>Submitted:</strong> ' + first + ' ' + last + ' (' + email + ')');
+          form.reset();
+          return;
+        }
+        // Non-OK but no exception: attempt fallback
+      } catch (err) {
+        // Likely a CORS/network error — fall back to a no-cors form POST
+      }
+
+      // Fallback: send as FormData with mode:no-cors (opaque response)
+      try {
+        const fd = new FormData();
+        fd.append('first', first);
+        fd.append('last', last);
+        fd.append('email', email);
+        await fetch(SCRIPT_URL, { method: 'POST', body: fd, mode: 'no-cors' });
+        showMessage('<strong>Submitted (no response):</strong> ' + first + ' ' + last + ' (' + email + ')');
+        form.reset();
+      } catch (err) {
+        showMessage('Submission failed. See README for setup instructions.', true);
+      }
     });
   </script>
 </body>

@@ -17,3 +17,9 @@ gh repo create simple-form-vercel --public --source=. --remote=origin --push
 # deploy with Vercel CLI
 vercel --prod --confirm
 ```
+
+Google Sheets integration:
+
+- See `google-apps-script/Code.gs` for a sample Apps Script `doPost` handler.
+- Follow `google-apps-script/README.md` to deploy the script as a Web App and copy the URL.
+- Paste the web app URL into `index.html` by replacing `YOUR_SCRIPT_ID` in `SCRIPT_URL`.
