@@ -9,7 +9,9 @@ Google Apps Script deployment steps
 4. Save the project, then choose **Deploy > New deployment**.
    - Select **Web app**.
    - For **Execute as:** choose `Me`.
-   - For **Who has access:** choose `Anyone` or `Anyone, even anonymous` so your static site can post to it.
+   - For **Who has access:** choose `Anyone, even anonymous`.
+     - If you choose `Anyone`, the browser may still require a Google login and submissions will fail with a 401.
+     - The site must have `Anyone, even anonymous` for anonymous visitors to submit successfully.
 
 5. Deploy and copy the Web app URL (it looks like `https://script.google.com/macros/s/DEPLOY_ID/exec`).
 
