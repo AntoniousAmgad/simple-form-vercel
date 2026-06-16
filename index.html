@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Simple Form</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Sign Up</h1>
+    <form id="signup-form">
+      <label>
+        First Name
+        <input name="first" type="text" required>
+      </label>
+      <label>
+        Last Name
+        <input name="last" type="text" required>
+      </label>
+      <label>
+        Email
+        <input name="email" type="email" required>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="result" class="hidden"></div>
+  </main>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const result = document.getElementById('result');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const first = data.get('first').trim();
+      const last = data.get('last').trim();
+      const email = data.get('email').trim();
+      if (!first || !last || !email) return;
+      result.className = '';
+      result.innerHTML = `<strong>Submitted:</strong> ${first} ${last} (${email})`;
+      form.reset();
+    });
+  </script>
+</body>
+</html>
