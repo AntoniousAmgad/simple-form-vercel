@@ -74,3 +74,8 @@ function doPost(e){
     return output;
   }
 }
+
+function doGet(e){
+  return ContentService.createTextOutput(JSON.stringify({status:'ready',message:'This web app accepts POST requests.'}))
+    .setMimeType(ContentService.MimeType.JSON);
+}
